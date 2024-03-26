@@ -25,6 +25,7 @@ jobs:
   dev:
     name: DEV
     runs-on: self-hosted
+    if: github.ref == 'refs/heads/dev'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
