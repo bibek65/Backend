@@ -25,6 +25,10 @@ jobs:
 
       - name: Commit version increase
         uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Commit version increase
         run: |
           npm version patch
           git add package.json
