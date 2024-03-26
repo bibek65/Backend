@@ -7,6 +7,7 @@ on:
 jobs:
   prod:
     runs-on: self-hosted
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -24,6 +25,7 @@ jobs:
   dev:
     runs-on: self-hosted
     needs: prod
+    name: DEV ENV
     if: github.ref == 'refs/heads/dev'
     steps:
       - name: Checkout
