@@ -24,12 +24,6 @@ jobs:
           docker push bibek65/backend-image:$(git rev-parse --short "$GITHUB_SHA")
 
       - name: Commit version increase
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          token: ${{ secrets.PAT_TOKEN }}
-
-      - name: Commit version increase\
         with:
           token: ${{ secrets.PAT_TOKEN }}
         run: |
