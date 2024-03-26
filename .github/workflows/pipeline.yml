@@ -19,6 +19,7 @@ jobs:
       - name: Build and Push Docker image
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/devops/backend-image:stable .
+          docker images
           docker push ${{ secrets.DOCKER_USERNAME }}/devops/backend-image:stable
   dev:
     runs-on: self-hosted
@@ -33,4 +34,5 @@ jobs:
       - name: Build and Push Docker image
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/devops/backend-image:dev .
+          docker images
           docker push ${{ secrets.DOCKER_USERNAME }}/devops/backend-image:dev
