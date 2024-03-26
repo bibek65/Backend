@@ -6,7 +6,7 @@ on:
 
 jobs:
   prod:
-    name: PROD
+    name: PROD ENV
     runs-on: self-hosted
     steps:
       - name: Checkout
@@ -23,7 +23,7 @@ jobs:
           docker push bibek65/backend-image:stable
           docker push bibek65/backend-image:$(git rev-parse --short "$GITHUB_SHA")
   dev:
-    name: DEV
+    name: DEV ENV
     runs-on: self-hosted
     if: github.ref == 'refs/heads/dev'
     steps:
