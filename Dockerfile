@@ -16,7 +16,6 @@
   WORKDIR /home/node/app
   USER node
 
-  # Copy neccessary files from the root directory
   COPY --chown=node:node src/db ./src/db
   COPY --chown=node:node package.json yarn.lock ./
 
