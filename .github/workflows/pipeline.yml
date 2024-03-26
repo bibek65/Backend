@@ -31,6 +31,8 @@ jobs:
 
       - name: Commit version increase
         run: |
+          git config --global user.name 'bibek65'
+          git config --global user.email 'bkarna65@gmail.com'
           npm version patch
           git add package.json
           git commit -m "Increase package.json version"
