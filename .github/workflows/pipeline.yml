@@ -33,7 +33,7 @@ jobs:
         run: |
           git config --global user.name 'bibek65'
           git config --global user.email 'bkarna65@gmail.com'
-          npm version patch 
+          npm version patch --no-git-tag-version
           git add package.json
           git commit -m "Increase package.json version and push"
           git push --force https://${{ secrets.PAT_TOKEN }}@github.com/bibek65/Backend.git
