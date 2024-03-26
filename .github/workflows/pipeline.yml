@@ -23,11 +23,11 @@ jobs:
           docker push bibek65/backend-image:stable
           docker push bibek65/backend-image:$(git rev-parse --short "$GITHUB_SHA")
 
-      - name: Commit version increasee
+      - name: Commit version increase
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Commit version increase
         run: |
@@ -36,7 +36,7 @@ jobs:
           npm version patch --no-git-tag-version
           git add package.json
           git commit -m "Increase package.json version"
-          git push "https://${{ secrets.PAT }}@github.com/bibek65/Backend.git"
+          git push "https://${{ secrets.PAT_TOKEN }}@github.com/bibek65/Backend.git"
   dev:
     name: DEV ENV
     runs-on: self-hosted
