@@ -24,7 +24,6 @@ jobs:
           docker push bibek65/backend-image:$(git rev-parse --short "$GITHUB_SHA")
   dev:
     runs-on: self-hosted
-    needs: prod
     name: DEV ENV
     if: github.ref == 'refs/heads/dev'
     steps:
