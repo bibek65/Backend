@@ -23,9 +23,6 @@ jobs:
           docker push bibek65/backend-image:stable
           docker push bibek65/backend-image:$(git rev-parse --short "$GITHUB_SHA")
 
-      - name: Increase package.json version
-        uses: stefanzweifel/npm-version-action@v4
-
       - name: Commit version increase
         run: |
           npm version patch
