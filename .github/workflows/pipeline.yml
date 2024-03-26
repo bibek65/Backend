@@ -21,6 +21,7 @@ jobs:
           docker build -t bibek65/backend-image:stable -t bibek65/backend-image:$(git rev-parse --short "$GITHUB_SHA") .
           docker images
           docker push bibek65/backend-image:stable
+          docker push bibek65/backend-image:$(git rev-parse --short "$GITHUB_SHA")
   dev:
     runs-on: self-hosted
     steps:
@@ -36,3 +37,4 @@ jobs:
           docker build -t bibek65/backend-image:dev -t bibek65/backend-image:$(git rev-parse --short "$GITHUB_SHA") .
           docker images
           docker push bibek65/backend-image:dev
+          docker push bibek65/backend-image:$(git rev-parse --short "$GITHUB_SHA")
