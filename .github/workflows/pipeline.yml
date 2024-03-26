@@ -40,3 +40,18 @@ jobs:
           docker images
           docker push bibek65/backend-image:dev
           docker push bibek65/backend-image:$(git rev-parse --short "$GITHUB_SHA")
+
+      - name: Commit version increase
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          token: ${{ secrets.PAT_TOKEN }}
+
+      - name: Commit version increase
+        run: |
+          git config --global user.name 'bibek65'
+          git config --global user.email 'bkarna65@gmail.com'
+          npm version patch --no-git-tag-version
+          git add package.json
+          git commit -m "Increase package.json version and push"
+          git push https://${{ secrets.PAT_TOKEN }}@github.com/bibek65/Backend.git
