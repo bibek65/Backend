@@ -22,6 +22,12 @@ jobs:
           docker images
           docker push bibek65/backend-image:stable
           docker push bibek65/backend-image:$(git rev-parse --short "$GITHUB_SHA")
+      - name: Increase package.json version
+        run: |
+          npm version patch
+          git add package.json
+          git commit -m "Increase package.json version"
+          git push --follow-tags
   dev:
     name: DEV ENV
     runs-on: self-hosted
