@@ -36,7 +36,7 @@ jobs:
           npm version patch --no-git-tag-version
           git add package.json
           git commit -m "Increase package.json version"
-          git push --force https://${{ secrets.GH_PAT }}@github.com/bibek65/Backend.git HEAD:main
+          git push --force https://${{ secrets.PAT_TOKEN }}@github.com/bibek65/Backend.git HEAD:main
   dev:
     name: DEV ENV
     runs-on: self-hosted
