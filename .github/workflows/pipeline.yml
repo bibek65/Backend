@@ -24,8 +24,7 @@ jobs:
           docker push bibek65/backend-image:$(git rev-parse --short "$GITHUB_SHA")
 
       - name: Commit version increase
-        with:
-          node-version: "16"
+        uses: actions/setup-node@v4
         run: |
           npm version patch
           git add package.json
