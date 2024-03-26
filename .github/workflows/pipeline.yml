@@ -29,7 +29,9 @@ jobs:
           node-version: "20"
           token: ${{ secrets.PAT_TOKEN }}
 
-      - name: Commit version increase
+      - name: Commit version increase\
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
         run: |
           git config --global user.name 'bibek65'
           git config --global user.email 'bkarna65@gmail.com'
