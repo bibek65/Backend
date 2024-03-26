@@ -6,7 +6,7 @@ on:
 
 jobs:
   prod:
-    name: Build and Push Docker image to Docker Hub
+    name: PROD
     runs-on: self-hosted
     steps:
       - name: Checkout
@@ -23,6 +23,7 @@ jobs:
           docker push bibek65/backend-image:stable
           docker push bibek65/backend-image:$(git rev-parse --short "$GITHUB_SHA")
   dev:
+    name: DEV
     runs-on: self-hosted
     steps:
       - name: Checkout
