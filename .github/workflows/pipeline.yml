@@ -23,7 +23,7 @@ jobs:
           docker push bibek65/backend-image:stable
           docker push bibek65/backend-image:$(git rev-parse --short "$GITHUB_SHA")
 
-      - name: Commit version increase
+      - name: Commit version increasee
         uses: actions/setup-node@v4
         with:
           node-version: "20"
